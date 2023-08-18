@@ -7,6 +7,7 @@ import cors from "cors";
 import schema from "./graphql/schema";
 import RestConnector from "./graphql/restconnector";
 import Customer from "./graphql/models/customer";
+import Dealer from "./graphql/models/dealer";
 
 const GRAPHQL_PORT = 8080;
 
@@ -17,7 +18,8 @@ app.use(compression());
 const restConnector = new RestConnector();
 
 const models = {
-  customer: new Customer(restConnector)
+  customer: new Customer(restConnector),
+  dealer: new Dealer(restConnector)
 };
 
 const graphQLOptions = {

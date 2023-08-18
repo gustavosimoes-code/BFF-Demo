@@ -1,13 +1,16 @@
 const getFakeData = path => {
 
   const pathParams = path.split("/");
-
-  switch (pathParams[1]) {
+  const endpoint = pathParams[1];
+  switch (endpoint) {
     case "customers":
       return customers;
     case "customer":
       const id = pathParams[2];
       return customers[id];
+    case "dealer":
+      const dealershipId = pathParams[2];
+      return dealers.find((d) => d.dealershipId == dealershipId)
     default:
       throw new Error("Path not found");
   }
@@ -61,6 +64,27 @@ const customers = [
     invitedBy: "Next-Gen",
     vin: "VWDS876678",
     invitationCode: "5687"
+  }
+];
+
+const dealers = [
+  {
+    dealershipId: "DEALER0",
+    dealershipCity: "Hanover",
+    dealerhipCountry: "Germany",
+    dealershipBrand: "Audi"
+  },
+  {
+    dealershipId: "DEALER1",
+    dealershipCity: "Madrid",
+    dealerhipCountry: "Spain",
+    dealershipBrand: "Cupra"
+  },
+  {
+    dealershipId: "DEALER2",
+    dealershipCity: "Wolfsburg",
+    dealerhipCountry: "Germany",
+    dealershipBrand: "Volkswagen"
   }
 ];
 

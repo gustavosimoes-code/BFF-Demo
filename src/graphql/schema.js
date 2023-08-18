@@ -11,9 +11,17 @@ type Customer {
   invitationCode: String
 }
 
+type Dealership {
+  dealershipId: String
+  dealershipCity: String
+  dealerhipCountry: String
+  dealershipBrand: String
+}
+
 type Query {
   customers: [Customer]
   customer(id : Int!) : Customer
+  dealer(dealershipId: String!): Dealership
 }
 `;
 
