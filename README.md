@@ -16,6 +16,12 @@ yarn install
 yarn start-dev
 ```
 
+### Available Queries
+
+- customer(id: Int)
+- customers
+- dealer(dealershipId: String)
+
 ### Example Query 
 Get customer details and customer list in a single query
 
