@@ -69,5 +69,11 @@ query {
         ]
     }
 }
-```                                                                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                   
+```
+### Example cURL
+
+```curl
+curl --location 'http://localhost:8080/graphql' \
+--header 'Content-Type: application/json' \
+--data '{"query":"query {\n  customer(id:0) {id, firstName, lastName},\n  dealer(dealershipId:\"DEALER1\") { dealershipCity, dealershipBrand }\n}","variables":{}}'
+```
